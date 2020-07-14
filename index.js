@@ -12,11 +12,13 @@ connectDB()
 
 // Import Routes
 const authRoute = require('./routes/auth')
+const postRoute = require('./routes/posts')
 
 // Middleware
 app.use(express.json())
 
 // Route Middleware
 app.use('/api/user', authRoute)
+app.use('/api/posts', postRoute)
 
 app.listen(3000, () => console.log('Server is up and running'))
